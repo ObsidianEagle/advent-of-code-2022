@@ -34,8 +34,21 @@ pub fn part1() -> u32 {
 
 pub fn part2() -> u32 {
     let lines = read_file_to_string_lines(Path::new("./data/day3.txt"));
+    let groups: Vec<&[String]> = lines.chunks(3).collect();
 
-    0
+    let group_badges = groups.iter().map(|group| {
+        for c in group[0].chars() {
+            if group[1].contains(&c.to_string()) & group[2].contains(&c.to_string()) {
+                return c;
+            }
+        }
+
+        panic!("No common item found in group");
+    });
+
+    let group_badge_priority_sum = group_badges.fold(0, |acc, cur| acc + get_item_priority(&cur));
+
+    group_badge_priority_sum
 }
 
 pub fn main() {
