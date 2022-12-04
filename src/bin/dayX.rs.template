@@ -1,0 +1,20 @@
+use std::path::Path;
+
+use aoc_lib::file_utils::read_file_to_string_lines;
+
+pub fn part1() -> u32 {
+    let lines = read_file_to_string_lines(Path::new("./data/dayX.txt"));
+
+    0
+}
+
+pub fn part2() -> u32 {
+    let lines = read_file_to_string_lines(Path::new("./data/dayX.txt"));
+
+    0
+}
+
+pub fn main() {
+    println!("Part 1 result: {}", part1());
+    println!("Part 2 result: {}", part2());
+}
